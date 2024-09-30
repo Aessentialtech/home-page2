@@ -1,0 +1,135 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: gold;
+    color: green;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+header h1{
+    margin: 0;
+    font-size: 1.5rem;
+
+}
+nav{
+    display: flex;
+    gap: 15px;
+
+}
+nav a{
+    color:black ;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+nav a:hover{
+    background-color: aqua;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 80px 20px 20px 20px;
+    flex: 1;
+}
+.sidebar{
+    
+    
+    background-color: darkolivegreen;
+    color: darkmagenta;
+    padding: 20px;
+    height: max-content;
+    display: none;
+}
+
+.main{
+    background-color:blueviolet;
+    padding: 20px;
+
+}
+.mainthing{
+    color: darkorange;
+    text-align: center;
+
+}
+footer{
+    background-color: #333;
+    color: gold;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* media queries for tablet and desktop*/
+
+@media (min-width: 760px) {
+    .container{
+        grid-template-column: 200px 1fr;
+}
+    .sidebar{
+        display: block;
+        position:sticky;
+        top:80px;
+}
+}
+@media(min-width: 1024px) {
+    .header h1{
+        font-size:2rem;
+}
+    
+}
+.menu-btn{
+    display: block;
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.menu-btn:hover{
+    background-color: #444
+    ;
+}
+@media (max-width:767px) {
+    nav{
+        flex-direction:column;
+        gap: 10px;
+    }
+    /* side bar dropdown*/
+    .sidebar{
+        position: relative;
+        width: 100%;
+    }
+    /* main content padding adjustment for small screen*/
+    .main{
+        padding: 10px;
+
+    }
+
+}
+/* transition for smooth visibility toggle*/
+.sidebar{
+    transition: all 0.3s ease;
+}
